@@ -1,14 +1,26 @@
+import piratedata
+import filemanager
 from tkinter import*
+import random
 def addnew():
-    x=0
     #create a new instance of pirate class
+    p = piratedata.Pirate()
     #get values out of boxes
     #load into pirate
+    p.name = nBox.get()
+    p.ship = sBox.get()
+    p.fictional = optionstring.get()
     #clear boxes
+    nBox.delete(0,"end")
+    sBox.delete(0,"end")
     #generate dict
+    d = p.getdict()
     #create new instance of file manager class
+    f = filemanager.FileManager()
     #generate random id
+    r = random.randint(10000,99999)
     #use file manager to save the pirate dict into our pirate database
+    f.writenewobject(r,d)
 myfont="Arial 14 bold"
 root = Tk()
 root.title("Add a Pirate!")
