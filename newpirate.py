@@ -1,5 +1,6 @@
+from firebase import firebase as fb
 import piratedata
-import filemanager
+import firebasemanager
 from tkinter import*
 import random
 def addnew():
@@ -16,7 +17,7 @@ def addnew():
     #generate dict
     d = p.getdict()
     #create new instance of file manager class
-    f = filemanager.FileManager()
+    f = firebasemanager.FirebaseManager()
     #generate random id
     r = random.randint(10000,99999)
     #use file manager to save the pirate dict into our pirate database
